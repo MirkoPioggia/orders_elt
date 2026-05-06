@@ -1,5 +1,10 @@
 with source as (
-    select * from {{ source('postgres', 'transactions') }}
+    select
+    id as transaction_id,
+    id_ordine as order_id,  -- <--- Qui prendiamo 'id_ordine' e lo rinominiamo in 'order_id'
+    data_transazione,
+    importo
+from {{ source('postgres', 'transazioni') }}
 ),
 
 renamed as (

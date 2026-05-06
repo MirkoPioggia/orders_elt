@@ -1,12 +1,11 @@
 with source as (
-    -- Qui cambiamo 'drive' con 'postgres'
-    select * from {{ source('postgres', 'methods') }}
+    select * from {{ source('postgres', 'metodi') }}
 ),
 
 renamed as (
     select
         id as method_id,
-        nome as method_name -- Usiamo 'nome' perché nelle tue slide è in italiano
+        nome as method_name 
     from source
 )
 

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: orders
+  - name: fct_orders  # <--- Cambiato da 'orders' a 'fct_orders'
     description: "Tabella finale che unisce ordini, transazioni e metodi di pagamento"
     columns:
       - name: order_id

@@ -1,5 +1,5 @@
 with source as (
-    select * from {{ source('postgres', 'refunds') }}
+    select * from {{ source('postgres', 'rinnovi') }}
 ),
 
 renamed as (
