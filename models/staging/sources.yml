@@ -1,17 +1,15 @@
 sources:
-    - name: postgres
-      description: This is a replica of the Postgres database used by our app
-      database: tickets-436319
-      schema: public
-      tables:
-          - name: orders
-          - name: users
-          - name: transactions
-          - name: refunds
+  - name: postgres
+    description: "Replica del database Postgres dell'app"
+    database: "eco-rune-459817-m9"
+    schema: raw_pay
+    tables:
+      - name: ordini        
+      - name: utenti         
+      - name: transazioni   
+      - name: metodi         
+      - name: coupon
+      - name: piani
+      - name: abbonamenti
+      - name: rinnovi
 
-    - name: drive
-      description: This is a replica of the Google Sheets
-      database: tickets-436319
-      schema: drive
-      tables:
-          - name: methods

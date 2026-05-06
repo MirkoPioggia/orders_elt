@@ -1,23 +1,15 @@
-with 
-
-source as (
-
-    select * from {{ source('postgres', 'users') }}
-
+with source as (
+    select * from {{ source('postgres', 'utenti') }}
 ),
 
 renamed as (
-
     select
         id as user_id,
-        email as user_email,
-        firstname,
-        lastname,
-        address,
-        created_at as registered_at
-
+        nome,
+        cognome,
+        data_nascita,
+        data_registrazione
     from source
-
 )
 
 select * from renamed

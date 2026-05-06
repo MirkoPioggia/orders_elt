@@ -1,26 +1,15 @@
-with 
-
-source as (
-
-    select * from {{ source('postgres', 'orders') }}
-
+with source as (
+    select * from {{ source('postgres', 'ordini') }}
 ),
 
 renamed as (
-
     select
         id as order_id,
         user_id,
+        plan_id,
         method_id,
-
-        created_at,
-        updated_at,
-
-        shipping_address,
-        shipping_name
-
+        data_ordine
     from source
-
 )
 
 select * from renamed

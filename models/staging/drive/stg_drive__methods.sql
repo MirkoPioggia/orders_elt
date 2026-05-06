@@ -1,22 +1,12 @@
-with 
-
-source as (
-
-    select * from {{ source('drive', 'methods') }}
-
+with source as (
+    select * from {{ source('postgres', 'metodi') }}
 ),
 
 renamed as (
-
     select
         id as method_id,
-        name as method,
-        fee
-
+        nome as method_name 
     from source
-
-    where id is not null
-
 )
 
 select * from renamed
