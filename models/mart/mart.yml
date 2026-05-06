@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: orders
+    description: "Tabella finale che unisce ordini, transazioni e metodi di pagamento"
+    columns:
+      - name: order_id
+        description: "Chiave primaria dell'ordine"
+        tests:
+          - unique
+          - not_null
+      - name: paid_amount
+        description: "Importo pagato dal cliente"
